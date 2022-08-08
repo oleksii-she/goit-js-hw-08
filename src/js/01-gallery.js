@@ -26,6 +26,6 @@ function creatImgCards(galleryItems) {
     .join('');
 }
 
-let galleryItems = new SimpleLightbox('.gallery a', {
+let lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });

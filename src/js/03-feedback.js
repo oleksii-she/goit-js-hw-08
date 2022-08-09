@@ -53,8 +53,8 @@ function onFeedbackSubmit(e) {
     email,
     message,
   };
-
-  e.currentTarget.reset();
   localStorage.removeItem('feedback-form-state');
+  e.currentTarget.reset();
+
   console.log(formData);
 }

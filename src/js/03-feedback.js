@@ -44,11 +44,13 @@ function populateInputVale() {
 function onFeedbackSubmit(e) {
   e.preventDefault();
 
+  console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
   if (dataValue.email === '' || dataValue.message === '') {
     return alert('All fields must be filled!');
   }
+  dataValue.email = '';
+  dataValue.message = '';
 
   e.currentTarget.reset();
   localStorage.removeItem('feedback-form-state');
-  console.log(dataValue);
 }

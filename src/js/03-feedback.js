@@ -1,6 +1,6 @@
 import throttle from 'lodash.throttle';
 
-//пошук селекторів
+// пошук селекторів
 const feedbackForm = document.querySelector('.feedback-form');
 const inputEmail = document.querySelector('input');
 const textarea = document.querySelector('textarea');
@@ -44,17 +44,11 @@ function populateInputVale() {
 function onFeedbackSubmit(e) {
   e.preventDefault();
 
-  const email = e.currentTarget.elements.email.value;
-  const message = e.currentTarget.elements.message.value;
-  if (email === '' || message === '') {
+  if (dataValue.email === '' || dataValue.message === '') {
     return alert('All fields must be filled!');
   }
-  const formData = {
-    email,
-    message,
-  };
-  localStorage.removeItem('feedback-form-state');
-  e.currentTarget.reset();
 
-  console.log(formData);
+  e.currentTarget.reset();
+  localStorage.removeItem('feedback-form-state');
+  console.log(dataValue);
 }
